@@ -1,0 +1,97 @@
+\input{~/Documents/Latex/hw_temp.tex}
+\newcommand{\cP}{\mathcal{P}}
+\newcommand{\cS}{\mathcal{S}}
+\newcommand{\pes}{\cP_{E/S}}
+\newcommand{\ellr}{(Ell/R)}
+\newcommand{\sch}{\text{Sch}}
+\newcommand{\gl}{[\Gamma(l)]}
+
+\begin{document}
+
+\title{Talk 3}
+\author{Fengyuan Lin}
+\maketitle
+\section{Main result}
+Let $R$ be a ring, $G$ a finite group and $\cP$ a moduli problem on \ellr. We say $G$ acts on $\cP$ if for each $E/S$ we have a group action $G$ on $\cP(E/S)$ commuting with pullbacks $\cP(E/S) \to \cP(E'/S')$. (Draw $2$ pictures according to p 186.) \\
+\begin{definition}
+	A $G$-equivariant morphism of moduli problems is a collection of $G$-equivariant maps between $G$-sets $\cP(E/S) \to \cP'(E/S)$ commuting with pullbacks. \\
+	If we have two conditions: $G$ operates trivially on $\cP'$ and for any etale representable moduli problem $\cS$ over \ellr, there exists a quotient $M(\cS,\cP)/G$ and it maps isomorphically to $M(\cS,\cP')$. Then we say $\cP'$ is a quotient of $\cP$ by $G$.
+\end{definition}
+The main result of Ch. 7 is following.
+\begin{theorem}
+	Let $\cP$ be relatively representable and affine over \ellr, and $G$ acts on $\cP$.
+	\begin{enumerate}
+		\item The quotient $\cP/G$ exists and is relatively representable and affine over \ellr. Any $G$-equivariant morphism $\cP \to \cP'$ factors through $\cP \to \cP/G \to \cP'$.
+		\item If $G$ acts freely on each $\cP(E/S)$ then $\cP_{E/S}$ is an etale $G$-torsor over $(\cP/G)_{E/S}$.
+		\item The quotient $\cP_{E/S}/G$ exists and there is a $S$-morphism $\pes/G\to (\cP/G)_{E/S}$ which is bijective on geometric points.
+		      It is an isomorphism one of the following holds:
+		      \begin{enumerate}
+			      \item $E/S$ is flat over \ellr.
+			      \item the order of $G$ is invertible on $S$.
+			      \item $G$ acts freely on $\cP(E/S)$.
+		      \end{enumerate}
+		\item the morphism $\cP\to\cP/G$ is finite.
+		\item If $\cP$ is normal, so is $\cP/G$.
+		\item If $\cP$ is finite over \ellr and $R$ is noetherian, so is $\cP/G$.
+	\end{enumerate}
+\end{theorem}
+We will make use of the following equivalence of categories. \\
+\{relatively representable problems on \ellr\} \\
+\{base-preserving functors from \ellr to (Sch/R-Sch)\}
+One direction is given by $\cP\mapsto \cP^\sch: E/S \mapsto \cP(E/S)$ and the other is given by $\cP(E/S)=\Hom_{S-\text{Sch}}(E/S, \mc F_{E/S})$. \\
+First suppose $G$ acts freely on $\cP$, we now define the quotient $\cP/G$ by $(\cP/G)^\sch = \cP^\sch/G$. \\
+To pass from the special case, we notice a isomorphism $(\gl,\cP)/\text{GL}(2,\F_\ell) \cong \cP$. \\
+This defines a equivalence of categories. \\
+(relatively representable moduli problems $\cP$ on \ellr) \\
+($M(\Gamma(l),\cP)$-schemes with $\text{GL}(2,\F_l)$ covering the standard action $M(\Gamma(l),\cP)$)\\
+By base change via $\gl$, we may define $M(\Gamma(l),\cP/G)$ as the quotient $\Spec A^G$ of a affine scheme by a finite group, then use the equivalence to define $\cP/G$. This is the ideal of proving (1) and (2). \\
+By writing out each step, we see the morphism in (3) is from the $\text{GL}(2,\F_l)$-invariants of $(M(\cS,\Gamma(l))\times_{M(\Gamma(l)} M(\Gamma(l),\cP))/G\to M(S,\Gamma(l))\times_{M(\Gamma(l)} M(\Gamma(l),\cP)/G$. \\
+Now we turn to (3).
+Whether this morphism is an isomorphism or bijection on geometric points is about the compatibility of taking invariants and extension of scalars. And it suffices to solve the corresponding affine problem, which is proved in the appendix. \\
+
+For example, (a) is from the nature of flatness, (b) is from an average construction, (c) is from a theorem saying $A$ is a finite etale $G$-torsor over $A$.\\
+The bijectivity on the geometric points is from the same proof of (b). \\
+From the same perspective, we see (4-6) comes from the corresponding affine case, by thinking $\cP_{E/S}$ as $\Spec A$. \\
+\section{Properties of the quotient}
+\begin{proposition}
+	Let $\cP_i, i=1,2$ be affine over \ellr, and $G_i$ acts on them. Suppose $\cP_1$ is flat over \ellr and $\cP_2/G_2$ is flat over \ellr, then we have $(\cP_1,\cP_2)/(G_1,G_2)\cong (\cP_1/G_1,\cP_2/G_2)$.
+\end{proposition}
+The idea is to use affineness to reduce to the case of rings and use flatness to commute tensor products with invariants. \\
+\section{Applications}
+There are many quotient relations between moduli problems we have seen.
+\begin{theorem}
+	\item Let $d\mid N$, then $[\Gamma(N)]\to[\Gamma(d)], (P,Q)\to ((N/d)P,(N/d)Q)$ is a quotient by the group $G = \ker(\text{GL}(2,\Z/N)\to \text{GL}(2,\Z/d))$.
+	\item The map $[\Gamma(N)]\to[\Gamma_1(N)], (P,Q)\to P$ is a quotient by the group $\{\Mtwo{1}{*}{0}{*}\}$.
+\end{theorem}
+To prove (1), we first work over $\Spec \Z[1/N]$. \\
+As the group $G$ acts on $[\Gamma(d)]$ trivially, we are left the verify the second condition. \\
+As $N$ is invertible, we the morphism $M(S,\Gamma(N))/G\to M(\cS, \Gamma(d))$ is an isomorphism as we have a free action. {After an etale base change we have a complete set of physical points. }, and both sides are normal schemes finite over $M(\cS)$. {From regularity theorems}. \\
+Again by the proof of regularity theorems 5.5.1, it suffices to take normalization. \\
+As $M(\cS,\cP)$ is the unique normalization of $M(\cS)$ in $M(\cS,\cP)\otimes \Z[1/N]$.
+By the uniqueness of normalization, they are isomorphic over $\Spec \Z$. \\
+\section{Axiomatic regularity of quotients theorem}
+\begin{theorem}
+	Let $\cP$ satisfies the axioms of regularity. Suppose the action of $G$ on $\cP$ satisfies the following axioms:
+	\begin{enumerate}
+		\item $G$ acts freely on $\cP\otimes \Z[1/p]$.
+		\item The action only depends on the $p$-divisible group of $E/S$.
+		\item Let $\cP_{E/W[[T]]}=\Spec A$, then $A$ is a finite module over $A^G$ of rank $\#G$.
+	\end{enumerate}
+	(1) Then the quotient is finite and flat over \ellr of constant rank $\geq 1$, and regular of dimension $2$. \\
+	(2) And the morphism $\cP\to \cP/G$ is finite and flat of constant rank $\#G$. Outside $p$, $\cP$ is a $G$-torsor over $\cP/G$.
+\end{theorem}
+To prove (1) we have to take $\cS$ to be naive $\ell$-level moduli to get an etale cover of \ellr.\\
+Using miracle flatness, it suffices to prove $M(\cS,\cP)\to M(\cS,\cP)/G$ is finite and flat. \\
+By let $U\subset M(\cS)$ to be the set of points where the consequence of (1) is satisfied, we may play the same game as in the proof of axiomatic regularity. \\
+As $\cP$ and $\cP/G$ are finite over \ellr and regular of the same dimension, (2) follows from miracle flatness and (1). \\
+In order to apply the theorem, we need to prove the last axiom for general cases. \\
+\begin{proposition}
+	Let $A$ be a complete noetherian local ring which is regular of dimension $n$ with perfect residue field. Let $G$ be a finite group acting on $A$. Suppose $A$ admits a regular system of parameters $x_1,\cdots,x_n$ such that the action on $(x_1,\cdots, x_{n-1})$ is trivial and $g(x_n) = ux_n$ for an unit $u\in A$. Then $A$ is a finite module over $A^G$ of rank $\#G$, and hence $A^G$ is also regular (of the same dimension).
+\end{proposition}
+We need $n=2$ and $x_1=p\in W(k)[[T]]$.
+\subsection{Applications}
+As a consequence, we have the following theorem.
+\begin{theorem}
+	For any subgroup $G$ of $\Mtwo{1}{*}{0}{*}\subset \text{GL}(2,\Z/p^n\Z)$ or any product group $\Mtwo{G_1}{0}{0}{G_2}\subset \text{GL}(2,\Z/p^n\Z)$, the quotient $[\Gamma(p^n)]/G$ is regular of dimension $2$, finite and flat over \ellr and under $[\Gamma(p^n)]$.
+\end{theorem}
+\end{document}
